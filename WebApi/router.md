@@ -50,6 +50,6 @@ $.post("/Repair/1/Workloads", workload);
 $.put("/Repair/1/Workloads/2", workload);
 
 // 删除维修单1下面工时编号为2的数据
-$.delete("/Repair/1/Workloads/2);
+$.delete("/Repair/1/Workloads/2");
 
 ```
