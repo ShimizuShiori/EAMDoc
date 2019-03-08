@@ -27,3 +27,17 @@ public class MyPermissionProvider : IPermissionProvider
 ```
 
 > 所有的授权提供器一律使用 PermissionProvider 结尾
+
+## 使用授权
+
+目前，我们对授权的审核和过滤，都能过在 MVC 或 WebApi 的 Action 上添加 Filter 来实现的。
+
+### MVC 项目
+
+* Dexi.EAM.Mvc.Filters.HasAllPermissions 表示请求该接口时，用户必须具备所有的授权
+* Dexi.EAM.Mvc.Filters.HasAnyPermission 表示请求该接口时，用户只要具备指定的授权中的一任何一个就能通过
+* Dexi.EAM.Mvc.Filters.HasPermission 表示请求该接口时，用户具备指定的一个授权
+
+### WebApi 项目
+
+尚未实现相应的 Filter

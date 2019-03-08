@@ -1,3 +1,4 @@
 # 应用层开发手册
 
 * [缓存的使用](./Cache.md)
+* [Permissions](./Permissions.md)
