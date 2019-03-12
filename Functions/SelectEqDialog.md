@@ -1,11 +1,5 @@
 [TOC]
 
-<style type="text/css">
-    .alert{
-        color:red;
-    }
-</style>
-
 # 设备对话框
 
 设备选择对话框使用场景较多。
@@ -29,7 +23,7 @@
 
 1. **Dexi.EAM.App.Request.QueryEquipmentLedgerReq** 中的所有可能涉及的属性，都应当在 **Load** 中实现
 2. **Dexi.EAM.App.Request.QueryEquipmentLedgerReq** 中，不是每个属性都会提供，因此在查询前，需要先判断属性的值是否提供
-3. <p class="alert">先对 **Dexi.EAM.App.Request.QueryEquipmentLedgerReq** 中的属性是否提供进行判断，再构建 Linq 或 Lambda 表达式<p>
+3. 先对 **Dexi.EAM.App.Request.QueryEquipmentLedgerReq** 中的属性是否提供进行判断，再构建 Linq 或 Lambda 表达式
 
 ## 3 绘制查询条件的控件
 
@@ -42,27 +36,28 @@
 由于不同的调用方需要显示不同的控件，因此在手动绘制控件时，需要使用 @if(ShowFilter("PropertyName")) 来判断是否需要显示此控件。
 
 ```html
-@if (ShowFilter("Type")) {
-<div class="layui-col-md3 layui-col-lg3 layui-col-xs3 ">
-    <label class="layui-form-label">设备类型</label>
-    <div class="layui-input-block">
-        <div id="retrTypeBtn">
-            <input
-                type="text"
-                id="retrType"
-                name="Type"
-                v-model="Type"
-                placeholder="设备类型"
-                autocomplete="off"
-                class="layui-input"
-                readonly
-                lay-search=""
-                style="cursor:pointer;"
-            />
-            <i class="layui-icon pull-icon-right">&#xe615;</i>
+@if (ShowFilter("Type")) 
+{
+    <div class="layui-col-md3 layui-col-lg3 layui-col-xs3 ">
+        <label class="layui-form-label">设备类型</label>
+        <div class="layui-input-block">
+            <div id="retrTypeBtn">
+                <input
+                    type="text"
+                    id="retrType"
+                    name="Type"
+                    v-model="Type"
+                    placeholder="设备类型"
+                    autocomplete="off"
+                    class="layui-input"
+                    readonly
+                    lay-search=""
+                    style="cursor:pointer;"
+                />
+                <i class="layui-icon pull-icon-right">&#xe615;</i>
+            </div>
         </div>
     </div>
-</div>
 }
 ```
 
